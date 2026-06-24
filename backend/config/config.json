@@ -1,9 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "nero_x",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "avnadmin",
+    "password": "AVNS_hxjc-D6ZZ2wmwdzTpS6",
+    "database": "defaultdb",
+    "host": "aulyaramadan-aulyaramadhanssage-319e.h.aivencloud.com",
+    "port": 20166,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
