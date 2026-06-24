@@ -1,0 +1,103 @@
+{
+  "info": {
+    "name": "Rental-PS API CRUD",
+    "_postman_id": "abcd1234-5678-efgh-ijkl-987654321000",
+    "description": "Collection CRUD lengkap untuk API Rental-PS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ruangan",
+      "item": [
+        {
+          "name": "Get All Ruangan",
+          "request": { "method": "GET", "url": "http://localhost:3000/api/ruangan" }
+        },
+        {
+          "name": "Create Ruangan",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"id_ruangan\": 3, \"nama_ruangan\": \"Room C\", \"jenis_ps\": \"PS5\", \"tarif_per_jam\": 25000, \"status\": \"Kosong\" }" },
+            "url": "http://localhost:3000/api/ruangan"
+          }
+        },
+        {
+          "name": "Update Ruangan",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"nama_ruangan\": \"Room C Updated\", \"status\": \"Terpakai\" }" },
+            "url": "http://localhost:3000/api/ruangan/3"
+          }
+        },
+        {
+          "name": "Delete Ruangan",
+          "request": { "method": "DELETE", "url": "http://localhost:3000/api/ruangan/3" }
+        }
+      ]
+    },
+    {
+      "name": "Barang",
+      "item": [
+        {
+          "name": "Get All Barang",
+          "request": { "method": "GET", "url": "http://localhost:3000/api/barang" }
+        },
+        {
+          "name": "Create Barang",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"id_barang\": 3, \"nama_barang\": \"Headset Gaming\", \"kategori\": \"Aksesoris\", \"stok\": 3, \"harga\": 300000, \"kondisi\": \"Baik\" }" },
+            "url": "http://localhost:3000/api/barang"
+          }
+        },
+        {
+          "name": "Update Barang",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"stok\": 10, \"kondisi\": \"Baru\" }" },
+            "url": "http://localhost:3000/api/barang/3"
+          }
+        },
+        {
+          "name": "Delete Barang",
+          "request": { "method": "DELETE", "url": "http://localhost:3000/api/barang/3" }
+        }
+      ]
+    },
+    {
+      "name": "Peminjaman",
+      "item": [
+        {
+          "name": "Get All Peminjaman",
+          "request": { "method": "GET", "url": "http://localhost:3000/api/peminjaman" }
+        },
+        {
+          "name": "Create Peminjaman",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"id_peminjaman\": 2, \"id_ruangan\": 2, \"nama_penyewa\": \"Andi\", \"waktu_mulai\": \"2026-06-23T10:00:00Z\", \"waktu_selesai\": \"2026-06-23T12:00:00Z\", \"durasi\": 2, \"total_biaya\": 30000, \"status_transaksi\": \"Active\" }" },
+            "url": "http://localhost:3000/api/peminjaman"
+          }
+        },
+        {
+          "name": "Update Peminjaman",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"status_transaksi\": \"Selesai\" }" },
+            "url": "http://localhost:3000/api/peminjaman/2"
+          }
+        },
+        {
+          "name": "Delete Peminjaman",
+          "request": { "method": "DELETE", "url": "http://localhost:3000/api/peminjaman/2" }
+        }
+      ]
+    }
+  ]
+}
