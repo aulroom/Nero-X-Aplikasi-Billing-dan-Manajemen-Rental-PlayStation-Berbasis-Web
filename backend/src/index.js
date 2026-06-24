@@ -22,7 +22,12 @@ app.get("/", (req, res) => {
 sequelize.authenticate()
   .then(() => console.log("✅ Database connected"))
   .catch(err => console.log("❌ DB error:", err));
-
+// Tambahkan kode ini sebelum app.listen()
+sequelize.sync({ alter: true }).then(() => {
+  console.log('Database & tables synced!');
+}).catch((err) => {
+  console.error('Error syncing database:', err);
+});
 // SERVER
 app.listen(5000, () => {
   console.log("🚀 Server running on http://localhost:5000");
